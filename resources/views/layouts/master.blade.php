@@ -24,6 +24,17 @@
             stripeKey: "{{config('services.stripe.key')}}"
         }
     </script>
+    <?php if(isDemo()) { ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152899919-3"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-152899919-3');
+        </script>
+    <?php } ?>
     <script src="https://js.stripe.com/v3/"></script>
     @stack('style')
 </head>
